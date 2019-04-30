@@ -57,10 +57,8 @@ void __syscall_exit(int rc)
 
 struct _reent* __syscall_getreent(void)
 {
-    ThreadVars* tv = getThreadVars();
-    if (tv->magic != THREADVARS_MAGIC)
-        fatalSimple(MAKERESULT(Module_Libnx, LibnxError_BadReent));
-    return tv->reent;
+    // Thx to SaltySD
+    return _impure_ptr;
 }
 
 
