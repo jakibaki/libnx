@@ -47,7 +47,7 @@ _start:
     b startup
     .word __nx_mod0 - _start
 .org _start+0xc
-    b hooked_sdmmc_execute_cmd
+    b sdmmc_wrapper_read
 
 .org _start+0x80
 startup:
